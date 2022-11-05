@@ -1,5 +1,6 @@
 package com.example.sqliteaplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -29,9 +30,9 @@ class MainActivity : AppCompatActivity() {
                 val app = application as App
                 val dao = app.db.Dao()
                 dao.insert(Users(firstName = firstName.text.toString(), lastName = lastName.text.toString()))
-
             }.start()
-            Toast.makeText(this, "Name Saved", Toast.LENGTH_LONG).show()
+            val intent = Intent(this@MainActivity, NewUserActivity::class.java)
+            startActivity(intent)
         }
 
 

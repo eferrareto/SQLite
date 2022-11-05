@@ -13,6 +13,7 @@ abstract class AppDataBase : RoomDatabase() {
     abstract fun Dao(): UserDao
 
     companion object{
+
         private var INSTANCE : AppDataBase? = null
 
         @Synchronized
